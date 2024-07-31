@@ -43,11 +43,17 @@ const Stack = contentstack.Stack({
 ContentstackLivePreview.init({
   enable: true,
   //@ts-ignore
+
   stackSdk: Stack,
   clientUrlParams: {
     host: `${process.env.REACT_APP_CONTENTSTACK_APP_HOST}`
       ? `${process.env.REACT_APP_CONTENTSTACK_APP_HOST}`
       : "",
+  },
+  live_preview: {
+    preview_token: process.env.REACT_APP_PREVIEW_TOKEN,
+    enable: true,
+    host: "https://ilink-cms-mpi.contentstackapps.com/", //optional
   },
   ssr: false,
 });
