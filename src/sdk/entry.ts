@@ -50,11 +50,7 @@ ContentstackLivePreview.init({
       ? `${process.env.REACT_APP_CONTENTSTACK_APP_HOST}`
       : "",
   },
-  live_preview: {
-    preview_token: process.env.REACT_APP_PREVIEW_TOKEN,
-    enable: true,
-    host: "https://ilink-cms-mpi.contentstackapps.com/", //optional
-  },
+
   ssr: false,
 });
 
