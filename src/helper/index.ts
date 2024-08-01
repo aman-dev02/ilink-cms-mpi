@@ -68,3 +68,14 @@ export const getBlogPostRes = async (entryUrl: string) => {
   liveEdit && addEditableTags(response[0], "blog_post", true);
   return response[0];
 };
+export const getTopNavbarRes = async () => {
+  const response = (await Stack.getEntry({
+    contentTypeUid: "top_navbar",
+    referenceFieldPath: undefined,
+    jsonRtePath: undefined,
+  })) as any;
+  console.log(response);
+  liveEdit && addEditableTags(response[0][0], "top_navbar", true);
+  return response[0][0];
+};
+getTopNavbarRes();

@@ -50,6 +50,12 @@ ContentstackLivePreview.init({
       ? `${process.env.REACT_APP_CONTENTSTACK_APP_HOST}`
       : "",
   },
+  editButton: {
+    enable: true,
+    exclude: ["outsideLivePreviewPortal"],
+    includeByQueryParameter: false,
+    position: "top-right",
+  },
 
   ssr: false,
 });

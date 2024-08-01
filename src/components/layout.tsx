@@ -83,7 +83,7 @@ export default function Layout({ entry }: { entry: EntryProps }) {
   }, [error]);
 
   return (
-    <div className='layout'>
+    <div className="layout">
       <Header header={getLayout.header} navMenu={getLayout.navHeaderList} />
       <DevTools response={jsonObj} />
       <Outlet />
