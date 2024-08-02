@@ -76,10 +76,13 @@ export default function Header({
           </ul>
         </nav>
         {navbarButtons && navbarButtons.display && (
+          //  ((resolved = useResolvedPath(navbarButtons.reference[0])),
+          //  (match = useMatch({ path: resolved.pathname, end: true })),
           <a
             href={navbarButtons.href.href}
             className="navbar-button"
             title={navbarButtons.href.title}
+            {...navbarButtons.$}
           >
             {navbarButtons.label.toUpperCase()}
           </a>
