@@ -3,17 +3,25 @@ import { Link, NavLink, useMatch, useResolvedPath } from "react-router-dom";
 import parse from "html-react-parser";
 import Tooltip from "../components/too-tip";
 import Skeleton from "react-loading-skeleton";
-import { HeaderProps, HeadermenuProps } from "../typescript/layout";
+import {
+  HeaderProps,
+  HeadermenuProps,
+  NavbarButtonsProps,
+} from "../typescript/layout";
 
 export default function Header({
   header,
   navMenu,
+  navbarButtons,
 }: {
   header: HeaderProps;
   navMenu: HeadermenuProps;
+  navbarButtons: NavbarButtonsProps;
 }) {
   let resolved;
   let match;
+
+  console.log(navbarButtons);
 
   return (
     <header className="header">
@@ -67,6 +75,15 @@ export default function Header({
             )}
           </ul>
         </nav>
+        {navbarButtons && navbarButtons.display && (
+          <a
+            href={navbarButtons.href.href}
+            className="navbar-button"
+            title={navbarButtons.href.title}
+          >
+            {navbarButtons.label.toUpperCase()}
+          </a>
+        )}
         <div className="json-preview">
           <Tooltip
             content="JSON Preview"

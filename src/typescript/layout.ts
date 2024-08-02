@@ -92,3 +92,19 @@ export type FooterProps = {
   social: Social;
   $: Object;
 };
+export type NavbarButton = {
+  display: boolean;
+  href: {
+    title: string;
+    href: string;
+    $: Object;
+  };
+  label: string;
+  reference: [unknown];
+  $: {
+    display: Object;
+    label: Object;
+  };
+};
+
+export type NavbarButtonsProps = NavbarButton;

@@ -1383,3 +1383,36 @@ footer a {
 .string-value span {
   color: #5d9ccb !important;
 }
+/* Navbar Button Styles */
+.navbar-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 34px;
+  padding: 6px 12px;
+  background-color: #34618f;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-size: 12px;
+  border: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navbar-button:hover {
+  background-color: #2a4f73;
+  color: #fff;
+}
+
+/* Hide button on mobile screens */
+@media (max-width: 768px) {
+  .navbar-button {
+    display: none;
+  }
+}

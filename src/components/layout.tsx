@@ -14,6 +14,7 @@ import {
   FooterProps,
   NavmenuProps,
   HeadermenuProps,
+  NavbarButtonsProps,
 } from "../typescript/layout";
 
 export default function Layout({ entry }: { entry: EntryProps }) {
@@ -23,6 +24,7 @@ export default function Layout({ entry }: { entry: EntryProps }) {
     footer: {} as FooterProps,
     navHeaderList: {} as HeadermenuProps,
     navFooterList: {} as NavmenuProps,
+    navbarButtons: {} as NavbarButtonsProps,
   });
   const mergeObjs = (...objs: any) => Object.assign({}, ...objs);
   const jsonObj = mergeObjs(
@@ -41,6 +43,7 @@ export default function Layout({ entry }: { entry: EntryProps }) {
       !header || (!footer && setError(true));
       const navHeaderList = header.navigation_menu;
       const navFooterList = footer.navigation.link;
+      const navbarButtons = header.navbar_buttons;
       if (allEntry.length !== header.navigation_menu.length) {
         allEntry.forEach((entry: Entry) => {
           const hFound = header.navigation_menu.find(
@@ -66,6 +69,7 @@ export default function Layout({ entry }: { entry: EntryProps }) {
         footer: footer,
         navHeaderList,
         navFooterList,
+        navbarButtons,
       });
     } catch (error) {
       setError(true);
@@ -84,7 +88,11 @@ export default function Layout({ entry }: { entry: EntryProps }) {
 
   return (
     <div className="layout">
-      <Header header={getLayout.header} navMenu={getLayout.navHeaderList} />
+      <Header
+        header={getLayout.header}
+        navMenu={getLayout.navHeaderList}
+        navbarButtons={getLayout.navbarButtons}
+      />
       <DevTools response={jsonObj} />
       <Outlet />
       <Footer footer={getLayout.footer} navMenu={getLayout.navFooterList} />
