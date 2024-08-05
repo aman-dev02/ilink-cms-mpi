@@ -95,7 +95,7 @@ export default function Layout({ entry }: { entry: EntryProps }) {
       />
       <DevTools response={jsonObj} />
       <Outlet />
-      <Footer footer={getLayout.footer} navMenu={getLayout.navFooterList} />
+      {/* <Footer footer={getLayout.footer} navMenu={getLayout.navFooterList} /> */}
     </div>
   );
 }
