@@ -21,7 +21,7 @@ export default function Header({
   let resolved;
   let match;
 
-  console.log(navbarButtons);
+  console.log(header);
 
   return (
     <header className="header">
@@ -78,14 +78,14 @@ export default function Header({
         {navbarButtons && navbarButtons.display && (
           //  ((resolved = useResolvedPath(navbarButtons.reference[0])),
           //  (match = useMatch({ path: resolved.pathname, end: true })),
-          <a
-            href={navbarButtons.href.href}
+          <Link
+            to={navbarButtons.href.href} // Ensure this is a valid route in your application
             className="navbar-button"
             title={navbarButtons.href.title}
-            {...navbarButtons.$}
+            {...(navbarButtons.$?.label as {})}
           >
             {navbarButtons.label.toUpperCase()}
-          </a>
+          </Link>
         )}
         <div className="json-preview">
           <Tooltip
